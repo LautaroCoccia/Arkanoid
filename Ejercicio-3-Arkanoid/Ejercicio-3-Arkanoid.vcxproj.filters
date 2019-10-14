@@ -1,22 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <ClCompile Include="src\Objects\ball.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\bricks.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objects\Palette.cpp">
+      <Filter>Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\execute_game.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\game_over.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\gameplay.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\menu.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Arkanoid.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Obj">
+      <UniqueIdentifier>{14b9ab26-363e-4495-9ec1-c0e6470a4ef4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{721ccb9d-e64f-4ff7-85d1-47686566b7b4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Arkanoid.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
+    <ClInclude Include="src\Objects\ball.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\bricks.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objects\Palette.h">
+      <Filter>Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\execute_game.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\game_over.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\gameplay.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\menu.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
