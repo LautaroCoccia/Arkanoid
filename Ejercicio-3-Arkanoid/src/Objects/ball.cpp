@@ -62,7 +62,7 @@ namespace BallObj
 	void DrawMyBall()
 	{
 		
-		DrawCircle(ball.ballPosition.x,ball.ballPosition.y,ball.ballRadius,ball.ballColor);
+		DrawCircle(static_cast<int>( ball.ballPosition.x), static_cast<int>(ball.ballPosition.y), (ball.ballRadius),ball.ballColor);
 		
 	}
 }

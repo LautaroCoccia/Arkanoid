@@ -11,7 +11,8 @@
 
 #include "../src/Screens/execute_game.h"
 
-void main()
+int main()
 {
 	ExecuteGame();
+	return 0;
 }
