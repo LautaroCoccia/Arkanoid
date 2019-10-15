@@ -18,8 +18,11 @@ namespace BallObj
 
 	extern const float increaseMovementX;
 	extern const float changeDirectionY;
+	extern Sound colisionSound;
 	extern Rectangle myBoundingBox;
 	extern Ball ball;
+	extern void LoadColisionSound();
+	extern void UnloadMySound();
 	extern void InitBall();
 	extern void CheckBallWallsLimit();
 	extern void DrawMyBall();

@@ -4,6 +4,7 @@
 
 namespace BallObj
 {
+	Sound colisionSound;
 	Rectangle myBoundingBox;
 	Ball ball;
 	bool checkColission = true;
@@ -11,6 +12,14 @@ namespace BallObj
 	const float increaseMovementX = -1.03f;
 	const float ballDiameter = ball.ballRadius * 2;
 	
+	void LoadColisionSound()
+	{
+		colisionSound = LoadSound("assets/sounds/ColisionSound.wav");
+	}
+	void UnloadMySound()
+	{
+		UnloadSound(colisionSound);
+	}
 	void InitBall()
 	{
 		ball.ballPosition = { halfScreenWidth,  halfScreenHeight };
