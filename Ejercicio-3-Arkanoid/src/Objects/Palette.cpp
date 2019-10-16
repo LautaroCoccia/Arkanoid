@@ -24,7 +24,6 @@ Rectangle boxP1 = { static_cast<float>(halfScreenWidth) - static_cast<float>(hal
 
 int lifePoints = livesMax;
 int colorP1 = color0;
-
 static void SetColorPlayer1();
 
 void InitRecColor()

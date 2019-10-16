@@ -94,6 +94,10 @@
     <PreBuildEvent>
       <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y</Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
