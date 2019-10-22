@@ -1,15 +1,19 @@
 #include "execute_game.h"
-#include "menu.h"
+
+#include "ball.h"
+#include "bricks.h"
 #include "gameplay.h"
-#include "../Objects/ball.h"
-#include "../Objects/bricks.h"
 #include "game_over.h"
+#include "menu.h"
+
 void ExecuteGame()
 {
 	InitWindow(800,450, "Arkanoid.exe - Lautaro Coccia");
 	// Set our game to run at 60 frames-per-second
 	//--------------------------------------------------------------------------------------
 	SetTargetFPS(60);
+
+	InitAudioDevice();
 	LoadMusic();
 	BallObj::LoadColisionSound();
 	BallObj::InitBall();

@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Ejercicio-3-Arkanoid\bin\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)Ejercicio-3-Arkanoid\obj\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)Ejercicio-3-Arkanoid\bin\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)Ejercicio-3-Arkanoid\obj\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,7 +83,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Ejercicio-3-Arkanoid\src\Screens;$(SolutionDir)Ejercicio-3-Arkanoid\src\Objects;$(SolutionDir)\Librerias\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Screens;$(SolutionDir)src\Objects;$(SolutionDir)\Librerias\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -92,11 +92,13 @@
       <SubSystem>Console</SubSystem>
     </Link>
     <PreBuildEvent>
-      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y</Command>
-    </PreBuildEvent>
-    <PostBuildEvent>
       <Command>
       </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y
+xcopy "$(SolutionDir)resources" "$(ProjectDir)" /s /y
+rmdir "$(ProjectDir)raw"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -115,7 +117,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Ejercicio-3-Arkanoid\src\Screens;$(SolutionDir)Ejercicio-3-Arkanoid\src\Objects;$(SolutionDir)\Librerias\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Screens;$(SolutionDir)src\Objects;$(SolutionDir)\Librerias\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -126,8 +128,14 @@
       <AdditionalDependencies>opengl32.lib;raylib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y;
+xcopy "$(SolutionDir)resources" "$(OutDir)" /s /y;
+rmdir "$(OutDir)raw";</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -144,23 +152,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Arkanoid.cpp" />
-    <ClCompile Include="src\Objects\ball.cpp" />
-    <ClCompile Include="src\Objects\bricks.cpp" />
-    <ClCompile Include="src\Objects\Palette.cpp" />
-    <ClCompile Include="src\Screens\execute_game.cpp" />
-    <ClCompile Include="src\Screens\gameplay.cpp" />
-    <ClCompile Include="src\Screens\game_over.cpp" />
-    <ClCompile Include="src\Screens\menu.cpp" />
+    <ClCompile Include="..\src\Arkanoid.cpp" />
+    <ClCompile Include="..\src\Objects\ball.cpp" />
+    <ClCompile Include="..\src\Objects\bricks.cpp" />
+    <ClCompile Include="..\src\Objects\Palette.cpp" />
+    <ClCompile Include="..\src\Screens\execute_game.cpp" />
+    <ClCompile Include="..\src\Screens\gameplay.cpp" />
+    <ClCompile Include="..\src\Screens\game_over.cpp" />
+    <ClCompile Include="..\src\Screens\menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Objects\ball.h" />
-    <ClInclude Include="src\Objects\bricks.h" />
-    <ClInclude Include="src\Objects\Palette.h" />
-    <ClInclude Include="src\Screens\execute_game.h" />
-    <ClInclude Include="src\Screens\gameplay.h" />
-    <ClInclude Include="src\Screens\game_over.h" />
-    <ClInclude Include="src\Screens\menu.h" />
+    <ClInclude Include="..\src\Objects\ball.h" />
+    <ClInclude Include="..\src\Objects\bricks.h" />
+    <ClInclude Include="..\src\Objects\Palette.h" />
+    <ClInclude Include="..\src\Screens\execute_game.h" />
+    <ClInclude Include="..\src\Screens\gameplay.h" />
+    <ClInclude Include="..\src\Screens\game_over.h" />
+    <ClInclude Include="..\src\Screens\menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

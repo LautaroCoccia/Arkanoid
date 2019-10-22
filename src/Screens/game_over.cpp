@@ -1,11 +1,9 @@
 #include "Game_over.h"
 
-#include "raylib.h"
+#include "ball.h"
+#include "bricks.h"
 #include "gameplay.h"
-#include "../Objects/Palette.h"
-#include "../Objects/bricks.h"
-#include "../Objects/ball.h"
-
+#include "Palette.h"
 
 static void UpdateGameOver();
 static void DrawGameOver();
@@ -34,6 +32,12 @@ static void DrawGameOver()
 static void UpdateGameOver()
 {
 	DrawGameOver();
-	if (IsKeyDown(KEY_ENTER)) menu = !menu, InitRecPositionNScore(), InitRecColor(),
+	if (IsKeyDown(KEY_ENTER))
+	{
+		menu = !menu;
+		InitRecPositionNScore();
+		InitRecColor();
 		InitBricksAtributes(), BallObj::InitBall(), lifePoints = livesMax;
+
+	}
 }

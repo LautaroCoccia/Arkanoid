@@ -1,7 +1,14 @@
 #include "Palette.h"
-const int maxColors = 5;
-const int limit = 2;
-const float rectangleMovement = 10.0f;
+
+static const int maxColors = 5;
+static const int limit = 2;
+static const float rectangleMovement = 10.0f;
+const int livesMax = 3;
+const int livesMin = 1;
+const int rectangleHeight = 10;
+const int rentangleWidth = 120;
+const int halfRectangleHeight = rectangleHeight / 2;
+const int halfRectangleWidth = rentangleWidth / 2;
 
 enum Colors
 {
@@ -11,7 +18,7 @@ enum Colors
 	color3,
 	color4
 };
-enum Seleccion
+enum Selection
 {
 	selection0 = 0,
 	selection1,
@@ -20,21 +27,39 @@ enum Seleccion
 	selection4
 };
 Color colorOptions[maxColors] = { BLUE,GOLD, RED, GREEN, PURPLE };
-Rectangle boxP1 = { static_cast<float>(halfScreenWidth) - static_cast<float>(halfRectangleWidth), static_cast<float>(BaseScreenHeight)-(rectangleHeight + rectangleHeight + rectangleHeight) , rentangleWidth, rectangleHeight };
+Rectangle boxP1 = 
+{ 
+	static_cast<float>(halfScreenWidth) - static_cast<float>(halfRectangleWidth), 
+	static_cast<float>(BaseScreenHeight)-(rectangleHeight + rectangleHeight + rectangleHeight) ,
+	rentangleWidth, rectangleHeight 
+};
 
 int lifePoints = livesMax;
 int colorP1 = color0;
-static void SetColorPlayer1();
 
-void InitRecColor()
-{
-	SetColorPlayer1();
-}
-static void SetColorPlayer1()
+static void SetPlayerColor();
+
+static void SetPlayerColor()
 {
 	boxP1.color = colorOptions[colorP1];
 }
 
+void InitRecColor()
+{
+	SetPlayerColor();
+}
+
+void InitRecPositionNScore()
+{
+	lifePoints = livesMax;
+	boxP1 = 
+	{ 
+		static_cast<float>(halfScreenWidth) - static_cast<float>(halfRectangleWidth), 
+		static_cast<float>(BaseScreenHeight) - (rectangleHeight + rectangleHeight + rectangleHeight) , 
+		rentangleWidth, rectangleHeight 
+	};
+
+}
 
 void CheckColorPlayer1Right()
 {
@@ -52,7 +77,7 @@ void CheckColorPlayer1Right()
 		}
 	}
 	
-	SetColorPlayer1();
+	SetPlayerColor();
 }
 
 void CheckColorPlayer1Left()
@@ -70,10 +95,8 @@ void CheckColorPlayer1Left()
 			boxP1.color = colorOptions[colorP1];
 		}
 	}
-	SetColorPlayer1();
+	SetPlayerColor();
 }
-
-
 
 void CheckPlayerMovement()
 {
@@ -81,14 +104,6 @@ void CheckPlayerMovement()
 	//----------------------------------------------------------------------------------
 	if (IsKeyDown(KEY_LEFT) && boxP1.x > (limit)) boxP1.x -= rectangleMovement;
 	if (IsKeyDown(KEY_RIGHT) && boxP1.x < (BaseScreenWidth - rentangleWidth )) boxP1.x += rectangleMovement;
-	
-}
-
-void InitRecPositionNScore()
-{
-	lifePoints = livesMax;
-	boxP1 = { static_cast<float>(halfScreenWidth) - static_cast<float>(halfRectangleWidth), static_cast<float>(BaseScreenHeight) - (rectangleHeight + rectangleHeight + rectangleHeight) , rentangleWidth, rectangleHeight };
-	
 }
 
 void DrawPlayersPoints()

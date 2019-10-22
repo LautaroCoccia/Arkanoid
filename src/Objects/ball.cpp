@@ -1,6 +1,6 @@
 #include "Ball.h"
-#include "Palette.h"
 
+#include "Palette.h"
 
 namespace BallObj
 {
@@ -16,20 +16,34 @@ namespace BallObj
 	{
 		colisionSound = LoadSound("assets/sounds/ColisionSound.wav");
 	}
+
 	void UnloadMySound()
 	{
 		UnloadSound(colisionSound);
 	}
+
 	void InitBall()
 	{
-		ball.ballPosition = { halfScreenWidth,  halfScreenHeight };
-		ball.ballSpeed = { ball.ballMovementX, ball.ballMovementY };
+		ball.ballPosition = 
+		{ 
+			halfScreenWidth, 
+			halfScreenHeight 
+		};
+
+		ball.ballSpeed = 
+		{ 
+			ball.ballMovementX,
+			ball.ballMovementY 
+		};
 		
-		myBoundingBox = { ball.ballPosition.x - ball.ballRadius,
+		myBoundingBox = 
+		{
+			ball.ballPosition.x - ball.ballRadius,
 			ball.ballPosition.y - ball.ballRadius,
 			ballDiameter, ballDiameter
 		};
 	}
+
 	void CheckBallWallsLimit()
 	{
 		// Check ball-walls limit
@@ -61,9 +75,7 @@ namespace BallObj
 
 	void DrawMyBall()
 	{
-		
 		DrawCircle(static_cast<int>( ball.ballPosition.x), static_cast<int>(ball.ballPosition.y), (ball.ballRadius),ball.ballColor);
-		
 	}
 }
 

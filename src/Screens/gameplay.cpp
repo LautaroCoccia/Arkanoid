@@ -1,6 +1,10 @@
-#include "../Objects/Palette.h"
-#include "../Objects/ball.h"
-#include "../Objects/bricks.h"
+#include "Palette.h"
+
+#include "ball.h"
+#include "bricks.h"
+
+#include <iostream>
+using namespace std;
 bool menu = true;
 bool playing = false;
 bool pause = false;
@@ -8,12 +12,13 @@ static void UpdateGame();
 static void CheckWin();
 static void SetGameAspectRatio();
 static void CheckColisionBallPlayers();
-static bool PauseGame();
-const float musicStreamMenu = 0.2f;
+static void PauseGame();
+static const float musicStreamMenu = 0.2f;
 Music music;
 
 void LoadMusic()
 {
+	music = LoadMusicStream("assets/sounds/music.ogg");
 	SetMusicVolume(music, musicStreamMenu);
 	PlayMusicStream(music);
 }
@@ -23,12 +28,15 @@ void UnloadMyMusic()
 }
 void RunGame()
 {
+	
 	UpdateGame();
 }
 
 static void UpdateGame()
 {
-	if (!PauseGame())
+
+	PauseGame();
+	if (!pause)
 	{
 		UpdateMusicStream(music);
 		CheckPlayerMovement();
@@ -36,18 +44,17 @@ static void UpdateGame()
 		CheckColisionBallPlayers();
 		CheckCollisionBricks();
 	}
-	else if (PauseGame())
+	else if (pause)
 	{
 		DrawText("PAUSED ", 320, 170, 40, RAYWHITE);
 	}
+	
 	DrawPlayersPoints();
 	DrawRectangleRec(boxP1, boxP1.color);
 	DrawBricks();
 	BallObj::DrawMyBall();
 	
 	CheckWin();
-	
-	
 }
 
 static void CheckWin()
@@ -73,11 +80,12 @@ static void CheckColisionBallPlayers()
 	BallObj::ball.ballPosition.y += BallObj::ball.ballSpeed.y * GetFrameTime();
 	BallObj::myBoundingBox.y = BallObj::ball.ballPosition.y - BallObj::ball.ballRadius;
 }
-static bool PauseGame()
+static void PauseGame()
 {
 	if (IsKeyPressed('P'))
 	{
 		pause = !pause;
+
 	}
-	return pause;
+	
 }

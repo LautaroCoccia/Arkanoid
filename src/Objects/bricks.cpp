@@ -1,15 +1,20 @@
 #include "bricks.h"
+
 #include "ball.h"
 
 bool activateBricks;
+int bricksActive = zeroBricks;
+const int zeroBricks = 0;
 Vector2 brickSize;
 Rectangle bricks[linesOfBricks][bricksPerLine];
-using namespace std;
-int bricksActive = zeroBricks;
+
 void InitBricksAtributes()
 {
 	activateBricks = true;
-	brickSize = { static_cast<float>(GetScreenWidth() / bricksPerLine), 40 };
+	brickSize = 
+	{ 
+		static_cast<float>(GetScreenWidth() / bricksPerLine),40 
+	};
 	InitBricksPosition();
 	
 }
@@ -27,8 +32,6 @@ void InitBricksPosition()
 				bricks[i][j].y = i * brickSize.y + initialDownPosition;
 				bricks[i][j].active = true;
 				bricksActive++;
-
-				
 			}
 			
 		}
@@ -53,7 +56,6 @@ void CheckCollisionBricks()
 		}
 	}
 }
-
 void DrawBricks() 
 {
 	for (int i = zeroBricks; i < linesOfBricks; i++)
@@ -63,9 +65,20 @@ void DrawBricks()
 
 			if (bricks[i][j].active)
 			{
-				if ((i + j) % 2 == zeroBricks) DrawRectangle(static_cast<int>(bricks[i][j].x - halfBrickSizeX), static_cast<int>(bricks[i][j].y - halfBrickSizeY), static_cast<int>(brickSize.x), static_cast<int>(brickSize.y), GRAY);
-				else DrawRectangle(static_cast<int>(bricks[i][j].x - halfBrickSizeX), static_cast<int>(bricks[i][j].y - halfBrickSizeY), static_cast<int>(brickSize.x), static_cast<int>(brickSize.y), DARKGRAY);
-				
+				if ((i + j) % 2 == zeroBricks)
+				{
+					DrawRectangle(static_cast<int>(bricks[i][j].x - halfBrickSizeX),
+					static_cast<int>(bricks[i][j].y - halfBrickSizeY),
+					static_cast<int>(brickSize.x), static_cast<int>(brickSize.y),
+					GRAY);
+				}
+				else
+				{
+					DrawRectangle(static_cast<int>(bricks[i][j].x - halfBrickSizeX), 
+					static_cast<int>(bricks[i][j].y - halfBrickSizeY), 
+					static_cast<int>(brickSize.x), static_cast<int>(brickSize.y), 
+					DARKGRAY);
+				}
 			}
 		}
 	}

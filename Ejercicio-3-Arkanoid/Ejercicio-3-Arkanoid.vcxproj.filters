@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\Objects\ball.cpp">
+    <ClCompile Include="..\src\Objects\ball.cpp">
       <Filter>Obj</Filter>
     </ClCompile>
-    <ClCompile Include="src\Objects\bricks.cpp">
+    <ClCompile Include="..\src\Objects\bricks.cpp">
       <Filter>Obj</Filter>
     </ClCompile>
-    <ClCompile Include="src\Objects\Palette.cpp">
+    <ClCompile Include="..\src\Objects\Palette.cpp">
       <Filter>Obj</Filter>
     </ClCompile>
-    <ClCompile Include="src\Screens\execute_game.cpp">
+    <ClCompile Include="..\src\Screens\execute_game.cpp">
       <Filter>Screens</Filter>
     </ClCompile>
-    <ClCompile Include="src\Screens\game_over.cpp">
+    <ClCompile Include="..\src\Screens\game_over.cpp">
       <Filter>Screens</Filter>
     </ClCompile>
-    <ClCompile Include="src\Screens\gameplay.cpp">
+    <ClCompile Include="..\src\Screens\gameplay.cpp">
       <Filter>Screens</Filter>
     </ClCompile>
-    <ClCompile Include="src\Screens\menu.cpp">
+    <ClCompile Include="..\src\Screens\menu.cpp">
       <Filter>Screens</Filter>
     </ClCompile>
-    <ClCompile Include="src\Arkanoid.cpp" />
+    <ClCompile Include="..\src\Arkanoid.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Obj">
@@ -33,25 +33,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Objects\ball.h">
+    <ClInclude Include="..\src\Objects\ball.h">
       <Filter>Obj</Filter>
     </ClInclude>
-    <ClInclude Include="src\Objects\bricks.h">
+    <ClInclude Include="..\src\Objects\bricks.h">
       <Filter>Obj</Filter>
     </ClInclude>
-    <ClInclude Include="src\Objects\Palette.h">
+    <ClInclude Include="..\src\Objects\Palette.h">
       <Filter>Obj</Filter>
     </ClInclude>
-    <ClInclude Include="src\Screens\execute_game.h">
+    <ClInclude Include="..\src\Screens\execute_game.h">
       <Filter>Screens</Filter>
     </ClInclude>
-    <ClInclude Include="src\Screens\game_over.h">
+    <ClInclude Include="..\src\Screens\game_over.h">
       <Filter>Screens</Filter>
     </ClInclude>
-    <ClInclude Include="src\Screens\gameplay.h">
+    <ClInclude Include="..\src\Screens\gameplay.h">
       <Filter>Screens</Filter>
     </ClInclude>
-    <ClInclude Include="src\Screens\menu.h">
+    <ClInclude Include="..\src\Screens\menu.h">
       <Filter>Screens</Filter>
     </ClInclude>
   </ItemGroup>
