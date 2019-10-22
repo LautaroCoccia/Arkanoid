@@ -96,7 +96,10 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y</Command>
+      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y
+xcopy "$(SolutionDir)resources" "$(OutDir)" /s /y
+
+rmdir "$(ProjectDir)raw"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -130,7 +133,10 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin" "$(OutDir)" /y</Command>
+      <Command>copy "$(SolutionDir)Librerias\raylib-2.5.0-Win32-msvc15\bin"
+xcopy "$(SolutionDir)resources" "$(OutDir)" /s /y
+
+rmdir "$(ProjectDir)raw"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
