@@ -2,7 +2,7 @@
 #define BALL_H
 #include "raylib.h"
 
-namespace BallObj
+namespace Arkanoid
 {
 	struct Ball
 	{

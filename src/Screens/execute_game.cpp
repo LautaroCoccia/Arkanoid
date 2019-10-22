@@ -6,38 +6,42 @@
 #include "game_over.h"
 #include "menu.h"
 
-void ExecuteGame()
+namespace Arkanoid
 {
-	InitWindow(800,450, "Arkanoid.exe - Lautaro Coccia");
-	// Set our game to run at 60 frames-per-second
-	//--------------------------------------------------------------------------------------
-	SetTargetFPS(60);
 
-	InitAudioDevice();
-	LoadMusic();
-	BallObj::LoadColisionSound();
-	BallObj::InitBall();
-	InitBricksAtributes();
-
-	while (!WindowShouldClose() || IsKeyPressed(KEY_ESCAPE))
+	void ExecuteGame()
 	{
-		BeginDrawing();
-		ClearBackground(BLACK);
-		if (menu)
+		InitWindow(800, 450, "Arkanoid.exe - Lautaro Coccia");
+		// Set our game to run at 60 frames-per-second
+		//--------------------------------------------------------------------------------------
+		SetTargetFPS(60);
+
+		InitAudioDevice();
+		LoadMusic();
+		Arkanoid::LoadColisionSound();
+		Arkanoid::InitBall();
+		InitBricksAtributes();
+
+		while (!WindowShouldClose() || IsKeyPressed(KEY_ESCAPE))
 		{
-			RunMenu();
+			BeginDrawing();
+			ClearBackground(BLACK);
+			if (menu)
+			{
+				RunMenu();
+			}
+			else if (playing)
+			{
+				RunGame();
+			}
+			else if (!playing)
+			{
+				RunGameOver();
+			}
+			EndDrawing();
 		}
-		else if (playing)
-		{
-			RunGame();
-		}
-		else if (!playing)
-		{
-			RunGameOver();
-		}
-		EndDrawing();
+		Arkanoid::UnloadMySound();
+		UnloadMyMusic();
+		CloseWindow();
 	}
-	BallObj::UnloadMySound();
-	UnloadMyMusic();
-	CloseWindow();
 }

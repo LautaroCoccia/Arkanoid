@@ -2,7 +2,7 @@
 
 #include "Palette.h"
 
-namespace BallObj
+namespace Arkanoid
 {
 	Sound colisionSound;
 	Rectangle myBoundingBox;

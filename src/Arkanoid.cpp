@@ -9,6 +9,8 @@
 
 #include "execute_game.h"
 
+using namespace Arkanoid;
+
 int main()
 {
 	ExecuteGame();

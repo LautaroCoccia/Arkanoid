@@ -1,5 +1,9 @@
 #ifndef EXECUTEGAME_H
 #define EXECUTEGAME_H
-void ExecuteGame();
+
+namespace Arkanoid
+{
+	void ExecuteGame();
+}
 #endif // !EXECUTEGAME_H
 
