@@ -23,6 +23,9 @@
       <Filter>Screens</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Arkanoid.cpp" />
+    <ClCompile Include="..\src\Screens\controls.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Obj">
@@ -52,6 +55,9 @@
       <Filter>Screens</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Screens\menu.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\controls.h">
       <Filter>Screens</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace Arkanoid
 		const float commonBallRadius = 14;
 		float ballRadius = commonBallRadius;
 		Vector2 ballPosition;
-		Vector2 ballSpeed;
+		Vector2 ballSpeed; 
 		Color ballColor = WHITE;
 		bool ballActive;
 	};

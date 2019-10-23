@@ -2,6 +2,7 @@
 
 #include "ball.h"
 #include "bricks.h"
+#include "controls.h"
 #include "gameplay.h"
 #include "game_over.h"
 #include "menu.h"
@@ -33,6 +34,10 @@ namespace Arkanoid
 			else if (playing)
 			{
 				RunGame();
+			}
+			else if (controls)
+			{
+				DrawControls();
 			}
 			else if (!playing)
 			{

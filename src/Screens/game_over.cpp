@@ -20,17 +20,17 @@ namespace Arkanoid
 		if (bricksActive == zeroBricks)
 		{
 			DrawText("YOU WIN!!", 350, 50, 20, RAYWHITE),
-				DrawText("PRESS \"ENTER\" TO RETURN MENU", 210, 100, 20, RAYWHITE),
-				DrawText("PRESS \"ESCAPE\" TO CLOSE GAME", 210, 150, 20, RAYWHITE);
+			DrawText("PRESS \"ENTER\" TO RETURN MENU", 210, 100, 20, RAYWHITE),
+			DrawText("PRESS \"ESCAPE\" TO CLOSE GAME", 210, 150, 20, RAYWHITE);
 			DrawText("PRESS \"ESCAPE\" TO CLOSE GAME", 210, 150, 20, RAYWHITE);
 		}
 		else if (lifePoints < livesMin)
 		{
 			DrawText("YOU LOSE!!", 340, 50, 20, RAYWHITE),
-				DrawText("PRESS \"ENTER\" TO RETURN MENU", 210, 100, 20, RAYWHITE),
-				DrawText("PRESS \"ESCAPE\" TO CLOSE GAME", 210, 150, 20, RAYWHITE);
+			DrawText("PRESS \"ENTER\" TO RETURN MENU", 210, 100, 20, RAYWHITE),
+			DrawText("PRESS \"ESCAPE\" TO CLOSE GAME", 210, 150, 20, RAYWHITE);
 		}
-
+		DrawText("v1.0", 760, 430, 20, RAYWHITE);
 	}
 	static void UpdateGameOver()
 	{
